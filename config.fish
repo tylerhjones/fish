@@ -1,6 +1,10 @@
 # ENV variables
 source ~/.config/fish/secrets.fish
 
+set PYENV_ROOT $HOME/.pyenv
+set -x PATH $PYENV_ROOT/shims $PYENV_ROOT/bin $PATH
+pyenv rehash
+
 set -x JAVA_HOME (/usr/libexec/java_home -v 11)
 set -x PATH $PATH $JAVA_HOME/bin
 set -x PATH $PATH /usr/local/bin
@@ -37,6 +41,7 @@ alias hex="hexyl"
 alias py="python"
 alias kc="kubectl"
 alias vt="volta"
+alias jmeter="jm"
 # Prompt
 starship init fish | source
 fish_add_path /usr/local/opt/node@14/bin
